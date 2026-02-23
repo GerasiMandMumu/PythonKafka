@@ -1,4 +1,3 @@
-
 """
 Пример запуска потребителя для чтения сообщений из Kafka.
 """
@@ -10,6 +9,7 @@ KAFKA_BOOTSTRAP_SERVERS = os.getenv('KAFKA_BOOTSTRAP_SERVERS', 'localhost:9092')
 TOPIC = 'test-topic'
 GROUP_ID = 'my-group'
 
+
 def process_message(data, msg):
     """
     Функция обработки одного сообщения.
@@ -18,6 +18,7 @@ def process_message(data, msg):
     print(f"Получено сообщение: {data}")
     logger = logging.getLogger('processor')
     logger.info(f"Обработано: ключ={msg.key()}, смещение={msg.offset()}")
+
 
 def main():
     # Создаём потребитель с автоматическим созданием топика
@@ -37,6 +38,7 @@ def main():
         batch_size=10,
         timeout=1.0
     )
+
 
 if __name__ == "__main__":
     main()

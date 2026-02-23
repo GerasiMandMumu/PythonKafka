@@ -6,6 +6,7 @@ from confluent_kafka.admin import AdminClient
 
 KAFKA_BOOTSTRAP_SERVERS = os.getenv('KAFKA_BOOTSTRAP_SERVERS', 'localhost:9092')
 
+
 def list_topics():
     admin_client = AdminClient({'bootstrap.servers': KAFKA_BOOTSTRAP_SERVERS})
     try:
@@ -15,6 +16,7 @@ def list_topics():
             print(f" – {topic}")
     except Exception as e:
         print(f"Ошибка подключения к Kafka: {e}")
+
 
 if __name__ == "__main__":
     list_topics()

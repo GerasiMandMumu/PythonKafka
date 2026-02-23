@@ -44,7 +44,7 @@ class RobustConsumer:
             'group.id': group_id,
             'auto.offset.reset': 'earliest',
             'enable.auto.commit': False,
-            'max.poll.interval.ms': 600000,        # 10 минут
+            'max.poll.interval.ms': 600000,  # 10 минут
             'session.timeout.ms': 30000,
             'heartbeat.interval.ms': 10000,
             'max.partition.fetch.bytes': 1048576,  # 1MB
